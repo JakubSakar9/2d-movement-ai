@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "2d_movement_ai"
   "2d_movement_ai.pdb"
+  "CMakeFiles/2d_movement_ai.dir/src/Core/Engine.cpp.o"
   "CMakeFiles/2d_movement_ai.dir/src/main.cpp.o"
 )
 

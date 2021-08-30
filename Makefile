@@ -142,6 +142,33 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d_movement_ai.dir/build.make CMakeFiles/2d_movement_ai.dir/build
 .PHONY : 2d_movement_ai/fast
 
+src/Core/Engine.o: src/Core/Engine.cpp.o
+
+.PHONY : src/Core/Engine.o
+
+# target to build an object file
+src/Core/Engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d_movement_ai.dir/build.make CMakeFiles/2d_movement_ai.dir/src/Core/Engine.cpp.o
+.PHONY : src/Core/Engine.cpp.o
+
+src/Core/Engine.i: src/Core/Engine.cpp.i
+
+.PHONY : src/Core/Engine.i
+
+# target to preprocess a source file
+src/Core/Engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d_movement_ai.dir/build.make CMakeFiles/2d_movement_ai.dir/src/Core/Engine.cpp.i
+.PHONY : src/Core/Engine.cpp.i
+
+src/Core/Engine.s: src/Core/Engine.cpp.s
+
+.PHONY : src/Core/Engine.s
+
+# target to generate assembly for a file
+src/Core/Engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2d_movement_ai.dir/build.make CMakeFiles/2d_movement_ai.dir/src/Core/Engine.cpp.s
+.PHONY : src/Core/Engine.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -178,6 +205,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 2d_movement_ai"
+	@echo "... src/Core/Engine.o"
+	@echo "... src/Core/Engine.i"
+	@echo "... src/Core/Engine.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

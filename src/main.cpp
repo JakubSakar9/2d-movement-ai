@@ -1,14 +1,18 @@
 #include <SDL2/SDL.h>
+
+#include "Core/Engine.hpp"
  
-int main(int argc, char ** argv)
-{
-    if(SDL_Init(SDL_INIT_EVERYTHING) != 0){
-        SDL_Log("Failed to initialize SDL: %s", SDL_GetError());
+int main(int argc, char ** argv) {
+    Engine::GetInstance()->Init();
+
+    while(Engine::GetInstance()->IsRunning()){
+        //Main program loop
+        Engine::GetInstance()->Events();
+        Engine::GetInstance()->Update();
+        Engine::GetInstance()->Render();
     }
-    else{
-        SDL_Log("SDL initialized successfully");
-    }
-    SDL_Quit();
+
+    Engine::GetInstance()->Clean();
  
     return 0;
 }
