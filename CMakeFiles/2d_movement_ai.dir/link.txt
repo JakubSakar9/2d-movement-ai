@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Werror -std=c++17 -g CMakeFiles/2d_movement_ai.dir/src/Core/Engine.cpp.o CMakeFiles/2d_movement_ai.dir/src/main.cpp.o -o 2d_movement_ai  -lSDL2 -lSDL2_image -lSDL2_ttf 

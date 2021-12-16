@@ -1,3 +1,0 @@
-/home/sakarjak/Personal/Coding/AI/2d-movement-ai/CMakeFiles/rebuild_cache.dir
-/home/sakarjak/Personal/Coding/AI/2d-movement-ai/CMakeFiles/edit_cache.dir
-/home/sakarjak/Personal/Coding/AI/2d-movement-ai/CMakeFiles/2d_movement_ai.dir
