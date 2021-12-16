@@ -1,3 +1,4 @@
+CFLAGS = -g -Wall
 LDFLAGS = -lSDL2 -lSDL2_image
 SOURCES = $(wildcard *.cpp) $(wildcard */*.cpp)
 EXEC = sdltest

@@ -4,9 +4,10 @@
 
 class Vector2 {
     public:
-        inline Vector2(float x, float y) : x(x), y(y) {}
-        float x;
-        float y;
+        Vector2() : Vector2(0., 0.) {}
+        inline Vector2(float _x, float _y) : x{_x}, y{_y} {}
+        double x;
+        double y;
         inline float Norm() {
             return sqrt(x * x + y * y);
         }

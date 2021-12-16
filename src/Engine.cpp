@@ -20,7 +20,7 @@ bool Engine::Init() {
         SDL_Log("Failed to create renderer: %s", SDL_GetError());
         return false;
     }
-
+    CreateEntities();
     return m_IsRunning = true;
 }
 
@@ -42,13 +42,14 @@ void Engine::Update() {
 void Engine::Render() {
     SDL_SetRenderDrawColor(m_Renderer, 0, 0, 0, 255);
     SDL_RenderClear(m_Renderer);
+    RenderEntities();
     SDL_RenderPresent(m_Renderer);
 }
 
 void Engine::Events() {
     SDL_Event event;
     SDL_PollEvent(&event);
-    switch(event.type){
+    switch(event.type) {
         case SDL_QUIT:
             Quit();
             break;
@@ -56,4 +57,14 @@ void Engine::Events() {
             //Here be dragons
             break;
     }
+}
+
+void Engine::RenderEntities() {
+    en->Render(m_Renderer);
+}
+
+void Engine::CreateEntities() {
+    Vector2 entityPosition = Vector2(100.0, 100.0);
+    Vector2 enitySize = Vector2(20.0, 20.0);
+    en = new Entity(entityPosition, enitySize, {255, 255, 255});
 }

@@ -5,6 +5,9 @@
 #include "SDL2/SDL_image.h"
 #endif
 
+#include "Entity.hpp"
+#include "Vector2.hpp"
+
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
 #define WINDOW_TITLE "2D movement AI"
@@ -23,14 +26,19 @@ class Engine {
         void Events();
         void Render();
 
-        inline bool IsRunning(){return m_IsRunning;}
-        inline SDL_Renderer *GetRenderer(){return m_Renderer;}
+        void RenderEntities();
+        void CreateEntities();
+
+        inline bool IsRunning() {return m_IsRunning;}
+        inline SDL_Renderer *GetRenderer() {return m_Renderer;}
     
     private:
-        Engine(){}
+        Engine() {}
         bool m_IsRunning;
 
         SDL_Window *m_Window;
         SDL_Renderer *m_Renderer;
         static Engine *s_Instance;
+
+        Entity *en;
 };

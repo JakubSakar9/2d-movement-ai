@@ -1,6 +1,6 @@
-#include <SDL2/SDL.h>
+#include "SDL2/SDL.h"
 
-#include "Core/Engine.hpp"
+#include "Engine.hpp"
  
 int main(int argc, char ** argv) {
     Engine::GetInstance()->Init();
