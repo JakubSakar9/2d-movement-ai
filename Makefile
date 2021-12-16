@@ -1,7 +1,7 @@
 CFLAGS = -g -Wall
 LDFLAGS = -lSDL2 -lSDL2_image
 SOURCES = $(wildcard *.cpp) $(wildcard */*.cpp)
-EXEC = sdltest
+EXEC = movement2d
 OBJS = $(patsubst %.cpp,%.o,$(SOURCES))
 
 

@@ -6,11 +6,8 @@
 #endif
 
 #include "Entity.hpp"
+#include "Params.hpp"
 #include "Vector2.hpp"
-
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 600
-#define WINDOW_TITLE "2D movement AI"
 
 class Engine {
     public:
@@ -27,6 +24,7 @@ class Engine {
         void Render();
 
         void RenderEntities();
+        void UpdateEntities();
         void CreateEntities();
 
         inline bool IsRunning() {return m_IsRunning;}

@@ -1,6 +1,5 @@
 #include "Engine.hpp"
 
-
 Engine *Engine::s_Instance = nullptr;
 
 bool Engine::Init() {
@@ -36,7 +35,7 @@ void Engine::Quit() {
 }
 
 void Engine::Update() {
-    
+    UpdateEntities();
 }
 
 void Engine::Render() {
@@ -61,6 +60,11 @@ void Engine::Events() {
 
 void Engine::RenderEntities() {
     en->Render(m_Renderer);
+}
+
+void Engine::UpdateEntities() {
+    Vector2 entityVel = Vector2(27.4, 12.3);
+    en->Update(entityVel);
 }
 
 void Engine::CreateEntities() {
