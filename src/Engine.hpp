@@ -5,6 +5,11 @@
 #include "SDL2/SDL_image.h"
 #endif
 
+#include <cstdlib>
+#include <ctime>
+#include <random>
+#include <cstdio>
+
 #include "Entity.hpp"
 #include "Params.hpp"
 #include "Vector2.hpp"
@@ -39,4 +44,5 @@ class Engine {
         static Engine *s_Instance;
 
         Entity *en;
+        Vector2 enVel;
 };

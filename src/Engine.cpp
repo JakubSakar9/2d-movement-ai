@@ -20,6 +20,7 @@ bool Engine::Init() {
         return false;
     }
     CreateEntities();
+    std::srand(std::time(0));
     return m_IsRunning = true;
 }
 
@@ -63,12 +64,16 @@ void Engine::RenderEntities() {
 }
 
 void Engine::UpdateEntities() {
-    Vector2 entityVel = Vector2(27.4, 12.3);
-    en->Update(entityVel);
+    float yDiff = std::rand() / (RAND_MAX + 1.)  - 0.5f;
+    float xDiff = std::rand() / (RAND_MAX + 1.)  - 0.5f;
+    //fprintf(stderr, "(%f, %f)\n", xDiff, yDiff);
+    Vector2 tmp = enVel * 1;
+    enVel = tmp + Vector2(20 * xDiff, 20 * yDiff);
+    en->Update(enVel);
 }
 
 void Engine::CreateEntities() {
-    Vector2 entityPosition = Vector2(100.0, 100.0);
+    Vector2 entityPosition = Vector2(400.0, 300.0);
     Vector2 enitySize = Vector2(20.0, 20.0);
     en = new Entity(entityPosition, enitySize, {255, 255, 255});
 }

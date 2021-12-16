@@ -23,6 +23,5 @@ void Entity::Render(SDL_Renderer *renderer) {
 
 void Entity::Update(Vector2 newVel) {
     velocity = newVel;
-    fprintf(stderr, "(%f, %f)\n", position.x, position.y);
     position = position + velocity * TIME_UNIT;
 }

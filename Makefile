@@ -12,4 +12,4 @@ $(EXEC): $(OBJS)
 	$(CXX) $(CFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJS) $(DEPENDS)
+	$(RM) $(OBJS) $(EXEC)
