@@ -4,7 +4,8 @@
 
 class Entity {
     public:
-        virtual void render();
+        void render();
+        void update(Vector2 transformPos, float transformRot);
     private:
         Vector2 position;
         Vector2 velocity;
