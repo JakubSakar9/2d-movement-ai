@@ -29,7 +29,7 @@ void EntityManager::RenderEntities(SDL_Renderer *renderer) {
 
 void EntityManager::UpdateEntities() {
     for(int i = 0; i < generationSize; i++) {
-        Vector2 velDiff =  Vector2(2.0, 0.2 * i);
+        Vector2 velDiff = RandVector(2.0);
         generation[i]->Update(velDiff);
     }
 }
