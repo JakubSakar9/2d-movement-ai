@@ -11,6 +11,7 @@
 #include <cstdio>
 
 #include "Entity.hpp"
+#include "EntityManager.hpp"
 #include "Params.hpp"
 #include "Vector2.hpp"
 
@@ -43,6 +44,5 @@ class Engine {
         SDL_Renderer *m_Renderer;
         static Engine *s_Instance;
 
-        Entity *en;
-        Vector2 enVel;
+        EntityManager *em;
 };

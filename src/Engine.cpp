@@ -19,8 +19,9 @@ bool Engine::Init() {
         SDL_Log("Failed to create renderer: %s", SDL_GetError());
         return false;
     }
-    CreateEntities();
+    em = new EntityManager(6);
     std::srand(std::time(0));
+    em->StartGeneration();
     return m_IsRunning = true;
 }
 
@@ -36,13 +37,13 @@ void Engine::Quit() {
 }
 
 void Engine::Update() {
-    UpdateEntities();
+    em->UpdateEntities();
 }
 
 void Engine::Render() {
     SDL_SetRenderDrawColor(m_Renderer, 0, 0, 0, 255);
     SDL_RenderClear(m_Renderer);
-    RenderEntities();
+    em->RenderEntities(m_Renderer);
     SDL_RenderPresent(m_Renderer);
 }
 
@@ -57,23 +58,4 @@ void Engine::Events() {
             //Here be dragons
             break;
     }
-}
-
-void Engine::RenderEntities() {
-    en->Render(m_Renderer);
-}
-
-void Engine::UpdateEntities() {
-    float yDiff = std::rand() / (RAND_MAX + 1.)  - 0.5f;
-    float xDiff = std::rand() / (RAND_MAX + 1.)  - 0.5f;
-    //fprintf(stderr, "(%f, %f)\n", xDiff, yDiff);
-    Vector2 tmp = enVel * 1;
-    enVel = tmp + Vector2(20 * xDiff, 20 * yDiff);
-    en->Update(enVel);
-}
-
-void Engine::CreateEntities() {
-    Vector2 entityPosition = Vector2(400.0, 300.0);
-    Vector2 enitySize = Vector2(20.0, 20.0);
-    en = new Entity(entityPosition, enitySize, {255, 255, 255});
 }

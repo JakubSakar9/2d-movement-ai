@@ -21,7 +21,7 @@ void Entity::Render(SDL_Renderer *renderer) {
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, 255);
 }
 
-void Entity::Update(Vector2 newVel) {
-    velocity = newVel;
+void Entity::Update(Vector2 velDiff) {
+    velocity = velocity + velDiff;
     position = position + velocity * TIME_UNIT;
 }
