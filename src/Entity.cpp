@@ -23,5 +23,13 @@ void Entity::Render(SDL_Renderer *renderer) {
 
 void Entity::Update(Vector2 velDiff) {
     velocity = velocity + velDiff;
+
+    Vector2 unboundPosition = position + velocity * TIME_UNIT;
+    if(unboundPosition.x < 0 || unboundPosition.x > SCREEN_WIDTH - size.y)
+        velocity.x *= -1;
+    
+    if(unboundPosition.y < 0 || unboundPosition.y > SCREEN_HEIGHT - size.y)
+        velocity.y *= -1;
+
     position = position + velocity * TIME_UNIT;
 }

@@ -19,7 +19,7 @@ bool Engine::Init() {
         SDL_Log("Failed to create renderer: %s", SDL_GetError());
         return false;
     }
-    em = new EntityManager(6);
+    em = new EntityManager(12);
     std::srand(std::time(0));
     em->StartGeneration();
     return m_IsRunning = true;
