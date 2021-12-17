@@ -25,7 +25,7 @@ void Entity::Update(Vector2 velDiff) {
     velocity = velocity + velDiff;
 
     Vector2 unboundPosition = position + velocity * TIME_UNIT;
-    if(unboundPosition.x < 0 || unboundPosition.x > SCREEN_WIDTH - size.y)
+    if(unboundPosition.x < 0 || unboundPosition.x > SCREEN_WIDTH - size.x)
         velocity.x *= -1;
     
     if(unboundPosition.y < 0 || unboundPosition.y > SCREEN_HEIGHT - size.y)

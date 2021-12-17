@@ -2,7 +2,7 @@
 
 void EntityManager::StartGeneration() {
     Vector2 entityPosition = Vector2(400.0, 300.0);
-    Vector2 entitySize = Vector2(20.0, 20.0);
+    Vector2 entitySize = Vector2(51.0, 23.0);
     for(int i = 0; i < generationSize; i++) {
         Entity *en = new Entity(entityPosition, entitySize, RandColor());
         generation.emplace_back(en);
