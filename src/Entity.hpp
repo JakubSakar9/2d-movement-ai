@@ -2,6 +2,7 @@
 
 #include "SDL2/SDL.h"
 
+#include "Params.hpp"
 #include "Vector2.hpp"
 
 class Entity {
