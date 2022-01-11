@@ -20,12 +20,12 @@ inline Vector2 operator+(Vector2 &u, const Vector2& v) {
     return Vector2(u.x + v.x, u.y + v.y);
 }
 
-inline Vector2 operator*(Vector2 &v, const float &a){
+inline Vector2 operator*(const float &a, Vector2 &v){
     return Vector2(a * v.x, a * v.y);
 }
 
 inline Vector2 RandVector(float amplitude) {
     float param = (std::rand() / (RAND_MAX + 1.)) * M_PI * 2;
     Vector2 tmp = Vector2(cos(param), sin(param));
-    return tmp * amplitude;
+    return amplitude * tmp;
 }
